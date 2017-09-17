@@ -1,0 +1,37 @@
+#mainWindow
+{
+  background-color:#2F4F4F;
+    
+    height: 30px;
+    margin-top:0;
+    margin-left: 0;
+}
+
+#admins_page
+{
+    color:white;
+    float: left;
+    line-height: 30px;
+    margin-top: 0px;
+    margin-left: 100px;
+}
+#name
+{
+    color:white;
+    margin-top: 3px;
+    //margin-left: 1300px;
+    line-height: 30px;
+    text-align: center; 
+    width:100px;
+    float: right;
+    margin-top: 0px;
+    margin-right: 10px;
+   
+    
+}
+
+#login_out
+{
+    float:right;
+    margin-right: 40px;
+}

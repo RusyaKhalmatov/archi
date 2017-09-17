@@ -1,0 +1,122 @@
+h3
+{
+  color:white;
+    text-align: center;
+}
+body{
+  font: 1em/1.6em sans-serif;
+  color: #353535;
+}
+
+img{
+  max-width: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*Внешний виd меню*/
+.main
+{   
+    height: 500px;
+    margin-top: 10px;
+   position: absolute;
+    margin-left: 0px;
+    width:200px;
+    background-color: darkblue;
+  z-index: 4;
+      
+}
+.side
+{
+    margin-top: 30px;
+   
+ 
+     
+}
+.menu a{
+    background: #3d3d3d;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #666;
+    transition: 0.5s all;
+}
+    
+
+/*Подсвечивание меню*/
+.menu a:hover
+{
+   background: #666;
+    padding: 10px 0 10px 20px;
+}
+.menu li:last-child a,
+.menu li .menu__drop li:last-child a
+{
+    border-radius: 0 0 3px 3px;
+    border-bottom: 0;
+}
+
+.menu li:first-child a,
+.menu li .menu__drop li:first-child a
+{
+    border-radius: 3px 3px 0 0;
+}
+.menu li .menu__drop li a
+{
+    border-radius: 0;
+    border-bottom: 1px solid #666;
+}
+/*Всплывающее меню*/
+
+.menu__list
+{
+    position: relative;
+   
+}
+
+.menu__drop
+{
+    position: absolute;
+    width:100%;    
+    left: 100%;
+    opacity: 0;
+    top:-9999em;
+    transition: 0.5s opacity;
+    border-left: 10px solid transparent;
+}
+
+.menu__list:hover .menu__drop
+{   opacity: 1;
+    top:0;
+     
+    
+}
+
+
+/*Иконки для всплывающих меню*/
+
+.menu__list::after
+{
+    content:" ";
+    position: absolute;
+    border: 5px solid;
+    border-color: transparent transparent transparent #eee;
+    top: 1em;
+    right:0.7em;
+    transition: 0.5s;
+    
+    
+}
+.menu__list:hover::after
+{
+    transform: scaleX(-1);
+}

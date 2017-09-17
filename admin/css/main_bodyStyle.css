@@ -1,0 +1,45 @@
+#first
+{
+   position: absolute;
+     width:1220px;
+    //width:auto;
+    height: 650px;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-left: 200px;
+    background-color:cornflowerblue;
+  //  z-index: 1;
+        
+}
+
+h1
+{
+    margin-left: 30px;
+    margin-top:30px;
+    color: black;
+        
+}
+#mainBut
+{
+    width:1100px;
+    height: 400px;
+    background-color: white;
+    margin-left: 50px;
+    position: absolute;
+    margin-top: 50px;
+   // z-index: 4;
+
+}
+
+#del
+{
+    margin-left: 10px;
+}
+
+.expl
+{
+  float: right;
+    margin-right: 50px;
+    border:1px solid black;
+    padding:10px;
+}
