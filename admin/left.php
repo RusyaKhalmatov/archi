@@ -15,3 +15,4 @@
     <li><a href="add_order.php">Add order</a></li>
     <li><a href="#">Users</a></li>
     <li><a href="statistics.php">Statistics</a></li>
+      <li><a href="check.php">Check password</a></li>

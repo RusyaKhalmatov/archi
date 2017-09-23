@@ -4,6 +4,7 @@
         session_start();
 
 require_once ("database_connection.php");
+
 db_connect();
 $login = $_POST["login"];
 $password=$_POST["password"];

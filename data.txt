@@ -1,0 +1,3 @@
+Super user:
+login: super-user
+password: theBest1995
