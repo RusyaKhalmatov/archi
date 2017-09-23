@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Log in | Main</title>
     <link href="admin/css/bootstrap.css" rel="stylesheet">
+    <script src = "js/accessControl.js"></script>
     </head>
     <body>
         

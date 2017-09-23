@@ -7,7 +7,7 @@
       <ul class="dropdown-menu">
         <li><a href="#">List of admins</a></li>
         <li><a href="#">Profile settings</a></li>
-        <li><a href="#">Add admin</a></li>                        
+        <li><a href="add_admin.php">Add admin</a></li>                        
       </ul>
     </li>
     <li><a href="#">Orders<span class="badge">5</span></a></li>

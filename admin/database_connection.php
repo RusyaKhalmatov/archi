@@ -2,10 +2,11 @@
 if (!isset($_SESSION))
            session_start();
 require_once ("app_config.php");
-include ("../scripts/acont.php");
+
 #return true if password is correct
 function is_password_correct($login,$password)
 {
+    include ("../scripts/acont.php");
     db_connect();
     $query = mysql_query("SELECT name,login,password FROM admins WHERE login='$login'");
      $data=mysql_fetch_assoc($query);

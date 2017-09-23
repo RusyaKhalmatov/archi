@@ -14,16 +14,21 @@ $name=$data["name"];
 
 if(isset($_POST["login"]) && isset($_POST["password"]))
 {
-    if (is_password_correct($login,$password))
-      {
-         $_SESSION["name"]=$name;
-         $_SESSION["login"]=$login;
-         redirect("admin.php","");
-      }
-    else
+    if($data!=NULL){
+        if (is_password_correct($login,$password))
+          {
+             $_SESSION["name"]=$name;
+             $_SESSION["login"]=$login;
+             redirect("admin.php","");
+          }
+        else
+        {
+            redirect("../access.php","Incorrect input");
+           
+        }
+    }else
     {
-        redirect("../access.php","Incorrect input");
-       
+         redirect("../access.php","Profile NOT found");
     }
     
 }
