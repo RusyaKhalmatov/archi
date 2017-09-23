@@ -9,8 +9,8 @@ function is_password_correct($login,$password)
     db_connect();
     $query = mysql_query("SELECT name,login,password FROM admins WHERE login='$login'");
      $data=mysql_fetch_assoc($query);
- 
-        if($data['password']==$password && $data['password']!=null)
+    $pwd = trim(decr($data['password']));
+        if($pwd==$password && $pwd!=null)
         {
             return true;
         }
