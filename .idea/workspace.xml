@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97cfd3cb-38c2-4378-875c-cca7fd61ce86" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/add_admin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/scripts/addAdmController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/accessControl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/access.php" afterPath="$PROJECT_DIR$/access.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/adm_log_action.php" afterPath="$PROJECT_DIR$/admin/adm_log_action.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/database_connection.php" afterPath="$PROJECT_DIR$/admin/database_connection.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/left.php" afterPath="$PROJECT_DIR$/admin/left.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.txt" afterPath="$PROJECT_DIR$/data.txt" />
     </list>
@@ -21,13 +25,13 @@
       <file leaf-file-name="addAdmController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/scripts/addAdmController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="32" column="70" lean-forward="false" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="70" />
+            <state relative-caret-position="294">
+              <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
               <folding>
-                <marker date="1506177937671" expanded="true" signature="69:81" ph="SELECT name,... admins" />
-                <marker date="1506177937671" expanded="true" signature="269:319" ph="SELECT name,... admins" />
-                <marker date="1506177937671" expanded="true" signature="640:726" ph="INSERT INTO admins... " />
-                <marker date="1506177937671" expanded="true" signature="800:871" ph="INSERT INTO admins... " />
+                <marker date="1506178202851" expanded="true" signature="69:81" ph="SELECT name,... admins" />
+                <marker date="1506178202851" expanded="true" signature="269:319" ph="SELECT name,... admins" />
+                <marker date="1506178202851" expanded="true" signature="641:727" ph="INSERT INTO admins... " />
+                <marker date="1506178202851" expanded="true" signature="801:872" ph="INSERT INTO admins... " />
               </folding>
             </state>
           </provider>
@@ -47,25 +51,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product-proc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/product-proc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="65" lean-forward="false" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="65" />
-              <folding>
-                <marker date="1504178959426" expanded="true" signature="491:553" ph="INSERT INTO img... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="add_admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/add_admin.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="147">
               <caret line="73" column="66" lean-forward="true" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="72" />
               <folding>
-                <marker date="1506176637685" expanded="true" signature="186:236" ph="SELECT super... admins" />
+                <marker date="1506177993550" expanded="true" signature="186:236" ph="SELECT super... admins" />
+                <marker date="1506177993550" expanded="true" signature="1083:1222" ph="{...}" />
+                <marker date="1506177993550" expanded="true" signature="2915:3066" ph="..." />
+                <marker date="1506177993550" expanded="true" signature="2915:3035" ph="..." />
+                <marker date="1506177993550" expanded="true" signature="3111:3424" ph="..." />
+                <marker date="1506177993550" expanded="true" signature="3176:3396" ph="..." />
+                <marker date="1506177993550" expanded="true" signature="3227:3365" ph="..." />
+                <marker date="1506177993550" expanded="true" signature="3473:3708" ph="..." />
+                <marker date="1506177993550" expanded="true" signature="3538:3681" ph="..." />
+                <marker date="1506177993550" expanded="true" signature="3811:4025" ph="{...}" />
+                <marker date="1506177993550" expanded="false" signature="3878:3915" ph="..." />
+                <marker date="1506177993550" expanded="true" signature="3920:3940" ph="..." />
+                <marker date="1506177993550" expanded="true" signature="4154:4396" ph="..." />
+                <marker date="1506177993550" expanded="true" signature="4160:4387" ph="/*...*/" />
               </folding>
             </state>
           </provider>
@@ -208,12 +213,12 @@
       <updated>1505636143812</updated>
       <workItem from="1505636145582" duration="665000" />
       <workItem from="1505828978907" duration="2343000" />
-      <workItem from="1506170213395" duration="5509000" />
+      <workItem from="1506170213395" duration="5789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8517000" />
+    <option name="totallyTimeSpent" value="8797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -361,24 +366,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/add_order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-          <folding>
-            <marker date="1504181730317" expanded="true" signature="2128:2145" ph="SELECT * FRO... img" />
-            <marker date="1504181730317" expanded="true" signature="3374:3403" ph="delete from " />
-            <marker date="1504181730317" expanded="true" signature="3443:3472" ph="delete from " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/add_admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="73" column="66" lean-forward="true" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="72" />
           <folding>
-            <marker date="1506176637685" expanded="true" signature="186:236" ph="SELECT super... admins" />
+            <marker date="1506177993550" expanded="true" signature="186:236" ph="SELECT super... admins" />
+            <marker date="1506177993550" expanded="true" signature="1083:1222" ph="{...}" />
+            <marker date="1506177993550" expanded="true" signature="2915:3066" ph="..." />
+            <marker date="1506177993550" expanded="true" signature="2915:3035" ph="..." />
+            <marker date="1506177993550" expanded="true" signature="3111:3424" ph="..." />
+            <marker date="1506177993550" expanded="true" signature="3176:3396" ph="..." />
+            <marker date="1506177993550" expanded="true" signature="3227:3365" ph="..." />
+            <marker date="1506177993550" expanded="true" signature="3473:3708" ph="..." />
+            <marker date="1506177993550" expanded="true" signature="3538:3681" ph="..." />
+            <marker date="1506177993550" expanded="true" signature="3811:4025" ph="{...}" />
+            <marker date="1506177993550" expanded="false" signature="3878:3915" ph="..." />
+            <marker date="1506177993550" expanded="true" signature="3920:3940" ph="..." />
+            <marker date="1506177993550" expanded="true" signature="4154:4396" ph="..." />
+            <marker date="1506177993550" expanded="true" signature="4160:4387" ph="/*...*/" />
           </folding>
         </state>
       </provider>
@@ -393,15 +399,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/add_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="31" column="30" lean-forward="false" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+          <folding>
+            <marker date="1504181730317" expanded="true" signature="2128:2145" ph="SELECT * FRO... img" />
+            <marker date="1504181730317" expanded="true" signature="3374:3403" ph="delete from " />
+            <marker date="1504181730317" expanded="true" signature="3443:3472" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/scripts/addAdmController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="32" column="70" lean-forward="false" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="70" />
+        <state relative-caret-position="294">
+          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
           <folding>
-            <marker date="1506177937671" expanded="true" signature="69:81" ph="SELECT name,... admins" />
-            <marker date="1506177937671" expanded="true" signature="269:319" ph="SELECT name,... admins" />
-            <marker date="1506177937671" expanded="true" signature="640:726" ph="INSERT INTO admins... " />
-            <marker date="1506177937671" expanded="true" signature="800:871" ph="INSERT INTO admins... " />
+            <marker date="1506178202851" expanded="true" signature="69:81" ph="SELECT name,... admins" />
+            <marker date="1506178202851" expanded="true" signature="269:319" ph="SELECT name,... admins" />
+            <marker date="1506178202851" expanded="true" signature="641:727" ph="INSERT INTO admins... " />
+            <marker date="1506178202851" expanded="true" signature="801:872" ph="INSERT INTO admins... " />
           </folding>
         </state>
       </provider>

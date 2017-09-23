@@ -21,7 +21,7 @@
            $super = false;
        }
 
-       if($data==null)
+       if($query==NULL)
        {
            if($psw===$psw2)
            {
