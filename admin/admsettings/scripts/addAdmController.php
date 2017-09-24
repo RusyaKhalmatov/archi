@@ -1,5 +1,6 @@
 <?php
-    include ("../database_connection.php");
+    include ("../../database_connection.php");
+    include ("../../../scripts/acont.php");
     db_connect();
 
 
@@ -11,7 +12,7 @@
        $psw = $_POST["password"];
        $psw2 = $_POST["password2"];
 
-       $query = mysql_query("SELECT name,login FROM admins WHERE login='$login'");
+       $query = mysql_query("SELECT login FROM admins WHERE login='$login'");
         $data=mysql_fetch_array($query);
        if(isset($_POST["supadm"])){
            $super = true;
@@ -21,16 +22,19 @@
            $super = false;
        }
 
-       if($query==NULL)
+       if($data==NULL)
        {
            if($psw===$psw2)
            {
+           		$encpwd = encr($psw);
                if($super==true)
                {
-                   mysql_query("INSERT INTO admins(name,login,password,superadmin) VALUES ('$name','$login','psw','1')");
+                  mysql_query("INSERT INTO admins(name,login,password,superadmin) VALUES ('$name','$login','$encpwd','1')");
+                  redirect("../add_admin.php","Admin successfully created");
                }else
                {
-                   mysql_query("INSERT INTO admins(name,login,password) VALUES ('$name','$login','psw')");
+                   mysql_query("INSERT INTO admins(name,login,password) VALUES ('$name','$login','$encpwd')");
+                   redirect("../add_admin.php","Admin successfully created");
                }
 
            }else{
