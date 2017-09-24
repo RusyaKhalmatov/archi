@@ -30,19 +30,12 @@ $query = mysql_query("SELECT superadmin FROM admins WHERE login='$login'");
             <?php require("../nav.php"); ?>
         </div>
         <div class="row" style="">
-            <div class="col-lg-2" style="border-right: 1px solid lightblue;"><?php require("../left.php");?></div>
-
-            <?php 
-
-            if($data["superadmin"]!=1)
-            {?>
-              
-              <h2 style="margin-left: 50px;">Only Super Admin can add new admins</h2>  
-            <?php } else {?>
-            <div class="col-lg-10" style=" padding-top:20px;  padding-left: 20px;">
+            <div class="col-lg-2" style="border-right: 1px solid lightblue;"><?php require("../left.php");?></div> 
+            
+            <div class="col-lg-5">
                 <h2>Please fill all the fields below</h2>
-               <div class="col-lg-6" style="margin-top: 30px;">
-                   <form class="form-horizontal" id="add-form" action="controller/addAdmController.php" method="POST">
+               <div class="col-lg-9" style="margin-top: 30px;">
+                   <form class="form-horizontal" id="profile-form" action="#" method="POST">
     				  
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Name:</label>
@@ -67,23 +60,15 @@ $query = mysql_query("SELECT superadmin FROM admins WHERE login='$login'");
                            <div class="col-sm-10">
                             <input type="password" class="form-control" id="password2" placeholder="Repeat password" name="password2">
                              </div>
-                        </div>
+                        </div>  
                     <div class="form-group"> 
                         <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                              <label><input type="checkbox" name="supadm" value="">Super admin</label>
-                            </div>
-                        </div>
-                     </div>    
-                    <div class="form-group"> 
-                        <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-default" name="add-admin">Add new admin</button>
+                          <button type="submit" class="btn btn-default" name="save-adm">Save changes</button>
                         </div>
                     </div>
     				</form>
                 </div>
 				<?php 
-            };
 				if (isset($_SESSION["message"]))
             {
             ?>
@@ -93,6 +78,11 @@ $query = mysql_query("SELECT superadmin FROM admins WHERE login='$login'");
                 unset($_SESSION["message"]);
             }
                 ?> 
+         </div>
+
+         <div class="col-lg-2" >
+           <h2>Status</h2>
+           <h3>Super admin</h3>
          </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin's settings <span class="caret"></span></a>
       <ul class="dropdown-menu">
         <li><a href="#">List of admins</a></li>
-        <li><a href="#">Profile settings</a></li>
+        <li><a href="admsettings/adm-profile.php">Profile settings</a></li>
         <li><a href="admsettings/add_admin.php">Add admin</a></li>                        
       </ul>
     </li>
