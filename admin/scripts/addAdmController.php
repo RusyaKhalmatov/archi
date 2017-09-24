@@ -11,11 +11,11 @@
        $psw = $_POST["password"];
        $psw2 = $_POST["password2"];
 
+echo $login;
        $query = mysql_query("SELECT name,login FROM admins WHERE login='$login'");
         $data=mysql_fetch_array($query);
        if(isset($_POST["supadm"])){
            $super = true;
-
        }else
        {
            $super = false;
@@ -27,10 +27,10 @@
            {
                if($super==true)
                {
-                   mysql_query("INSERT INTO admins(name,login,password,superadmin) VALUES ('$name','$login','psw','1')");
+                  mysql_query("INSERT INTO admins(name,login,password,superadmin) VALUES ('$name','$login','psw','1')");
                }else
                {
-                   mysql_query("INSERT INTO admins(name,login,password) VALUES ('$name','$login','psw')");
+                  mysql_query("INSERT INTO admins(name,login,password) VALUES ('$name','$login','psw')");
                }
 
            }else{
