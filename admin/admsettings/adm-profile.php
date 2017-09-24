@@ -5,7 +5,7 @@
     ensure_login();
     db_connect();
     $login = $_SESSION['login'];
-$query = mysql_query("SELECT superadmin FROM admins WHERE login='$login'");
+$query = mysql_query("SELECT * FROM admins WHERE login='$login'");
         $data=mysql_fetch_array($query);
 
 
@@ -19,6 +19,7 @@ $query = mysql_query("SELECT superadmin FROM admins WHERE login='$login'");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/bootstrap.css" rel="stylesheet">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -35,35 +36,29 @@ $query = mysql_query("SELECT superadmin FROM admins WHERE login='$login'");
             <div class="col-lg-5">
                 <h2>Please fill all the fields below</h2>
                <div class="col-lg-9" style="margin-top: 30px;">
-                   <form class="form-horizontal" id="profile-form" action="#" method="POST">
+                   <form class="form-horizontal" id="profile-form" action="controller/adminProfileController.php" method="POST">
     				  
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Name:</label>
                        <div class="col-sm-10">
-                        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                        <input type="text" class="form-control" id="name" value="<?=$data['name']; ?>" name="name1">
                       </div>
                      </div> 
                       <div class="form-group">
-                        <label class="control-label col-sm-2" for="login">Login:</label>
+                        <label class="control-label col-sm-2" for="login" >Login:</label>
                        <div class="col-sm-10">
-                        <input type="text" class="form-control" id="login" placeholder="Enter login" name="login">
+                        <input type="text" class="form-control" id="login" value="<?=$data['login'];?>" name="login" readonly>
                             </div>
                         </div>
-                      <div class="form-group">
-                        <label class="control-label col-sm-2" for="password">Password:</label>
-                       <div class="col-sm-10">
-                        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
-                        </div>  
-                      </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="password2">Repeat password:</label>
-                           <div class="col-sm-10">
-                            <input type="password" class="form-control" id="password2" placeholder="Repeat password" name="password2">
-                             </div>
+                        <label class="control-label col-sm-2" for="email">Email:</label>
+                       <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email" value="<?=$data['email'];?>" name="email1">
+                            </div>
                         </div>  
                     <div class="form-group"> 
                         <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-default" name="save-adm">Save changes</button>
+                          <button type="submit" class="btn btn-warning" name="save-adm">Save changes</button>
                         </div>
                     </div>
     				</form>
@@ -80,12 +75,65 @@ $query = mysql_query("SELECT superadmin FROM admins WHERE login='$login'");
                 ?> 
          </div>
 
-         <div class="col-lg-2" >
+         <div class="col-lg-5" style="">
            <h2>Status</h2>
            <h3>Super admin</h3>
+
+           <div class="row" style="padding: 20px;">
+           <button class="btn btn-primary" id="ch-pwd">Change password</button>
          </div>
-            </div>
+          
+          <div class="col-lg-10" id="pwd-panel" style=" display: none;">
+            <form  class="form-horizontal" action="controller/adminProfileController.php" method="POST">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="password">Old password:</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="Oldpassword" placeholder="Enter  old password" name="Oldpassword">
+                  </div>  
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="password">Password:</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+                  </div>  
+                </div>
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="password2">Repeat password:</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="password2" placeholder="Repeat password" name="password2">
+                    </div>
+                  </div>  
+                    <div class="form-group"> 
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-warning" name="save-pwd">Save new password</button>
+                        </div>
+                    </div>
+            </form>
+
+          </div>
+         </div>
+        </div>
+
+      <div class="row">
+
+        <div class="col-lg-6 col-lg-offset-2" id="pwd-change" style="padding-left: 50px;">
+         
+        </div>
+
+
+      </div>
+
+
+
         </div>
     </div>
 </body>
 </html>
+
+<script>
+$(document).ready(function(){
+    $("#ch-pwd").click(function(){
+        $("#pwd-panel").slideToggle("slow");
+    });
+});
+</script>
