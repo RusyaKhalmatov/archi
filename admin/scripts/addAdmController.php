@@ -11,7 +11,7 @@
        $psw = $_POST["password"];
        $psw2 = $_POST["password2"];
 
-echo $login;
+
        $query = mysql_query("SELECT name,login FROM admins WHERE login='$login'");
         $data=mysql_fetch_array($query);
        if(isset($_POST["supadm"])){
@@ -21,7 +21,7 @@ echo $login;
            $super = false;
        }
 
-       if($query==NULL)
+       if($data==NULL)
        {
            if($psw===$psw2)
            {
