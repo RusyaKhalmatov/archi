@@ -90,7 +90,7 @@ $(document).ready(function(){
             }*/
 	
 </script>
-
+Rusya
 </body>
 </html>
 
