@@ -19,7 +19,7 @@
 			      <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required>
 			    </div>
 			    <div class="col-sm-2">
-			    	<span class="error-user">fsdjf</span>
+			    	<span class="error-user"></span>
 			    </div>
 			    
 		  </div>
@@ -29,7 +29,7 @@
 			      <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
 			    </div>
 			    <div class="col-sm-2">
-			    	<span class="error-user"></span>
+			    	<span class="error-user" id="name_span"></span>
 			    </div>
 		  </div>
 		  <div class="form-group">
@@ -55,10 +55,8 @@
 <script type="text/javascript">
 	
 $(document).ready(function(){
-    alert("function");
-        $("#email").blur(function(){
-            //alert("fuck");
-            $(this).css("background-color", "#cccccc");
+         $("#name").blur(function(){
+            name_val();
         });
 
     $("#orderForm").submit(function()
@@ -89,8 +87,21 @@ $(document).ready(function(){
                 alert("Please fill all the fields");
             }*/
 	
+	function name_val(){
+	
+		var name_length = $('#name').val().length;
+		if(name_length<5)
+		{
+			$("#name_span").html("The name should be greater");
+		}
+		else
+		{
+			$("#name_span").hide();
+		}
+	}
 </script>
 
 </body>
 </html>
+
 
