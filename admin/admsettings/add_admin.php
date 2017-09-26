@@ -27,10 +27,10 @@ $query = mysql_query("SELECT superadmin FROM admins WHERE login='$login'");
 
 	<div class="container-fluid">
         <div class="row">
-            <?php require("../nav.php"); ?>
+            <?php require("nav.php"); ?>
         </div>
         <div class="row" style="">
-            <div class="col-lg-2" style="border-right: 1px solid lightblue;"><?php require("../left.php");?></div>
+            <div class="col-lg-2" style="border-right: 1px solid lightblue;"><?php require("left.php");?></div>
 
             <?php 
 

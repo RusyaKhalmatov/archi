@@ -1,3 +1,12 @@
+<style>
+	.error-user{
+		color: red;
+	}
+
+
+</style>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +15,9 @@
  <link rel="stylesheet" type="text/css" href="admin/css/bootstrap.css">
 <link rel="stylesheet" href="css/formStyle.css">
  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <script src="js/orderFormScript.js"></script>
+ 
 </head>
 <body>
 <div class="container">
@@ -19,7 +29,7 @@
 			      <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required>
 			    </div>
 			    <div class="col-sm-2">
-			    	<span class="error-user">fsdjf</span>
+			    	<span class="error-user"></span>
 			    </div>
 			    
 		  </div>
@@ -29,7 +39,7 @@
 			      <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
 			    </div>
 			    <div class="col-sm-2">
-			    	<span class="error-user"></span>
+			    	<span class="error-user" id="name_span"></span>
 			    </div>
 		  </div>
 		  <div class="form-group">
@@ -52,6 +62,7 @@
 	</div>
 </div>
 
+<<<<<<< HEAD
 <script type="text/javascript">
 	
 $(document).ready(function(){
@@ -91,6 +102,11 @@ $(document).ready(function(){
 	
 </script>
 Rusya
+=======
+<script src="js/orderFormScript.js" type="text/javascript"></script>
+
+>>>>>>> forwork
 </body>
 </html>
+
 
