@@ -1,3 +1,12 @@
+<style>
+	.error-user{
+		color: red;
+	}
+
+
+</style>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +15,9 @@
  <link rel="stylesheet" type="text/css" href="admin/css/bootstrap.css">
 <link rel="stylesheet" href="css/formStyle.css">
  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- <script src="js/orderFormScript.js"></script>
+ 
 </head>
 <body>
 <div class="container">
@@ -52,54 +62,7 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	
-$(document).ready(function(){
-         $("#name").blur(function(){
-            name_val();
-        });
-
-    $("#orderForm").submit(function()
-    {
-        $.ajax({
-            type: "POST",
-            url: "orderFormHandler.php",
-            data: $(this).serialize()}).done(function(){
-            alert("Thank you, the form has been accepted! ");
-        });
-        return false;
-    })
-    
-    
-});
-
-	/*function validateForm()
-	{
-		var form = document.getElementById("orderForm");
-        var email = form.elements[0].value;
-        var name = form.elements[1].value;
-        var surname = form.elements[2].value;
-        if(email.length>0 )
-            {
-                form.action="orderFormHandler.php"
-                form.submit;
-            }else{
-                alert("Please fill all the fields");
-            }*/
-	
-	function name_val(){
-	
-		var name_length = $('#name').val().length;
-		if(name_length<5)
-		{
-			$("#name_span").html("The name should be greater");
-		}
-		else
-		{
-			$("#name_span").hide();
-		}
-	}
-</script>
+<script src="js/orderFormScript.js" type="text/javascript"></script>
 
 </body>
 </html>
