@@ -12,13 +12,51 @@ $(document).ready(function(){
         check_email();
     });
 
+$("#profile-form").submit(
+    function()
+        {        
+            check_name();
+            check_email();
+            
+            if (error_name==false && error_email==false)
+                {
+                    return true;
+                }
+            else
+                {
+                    return false;
+                }
+        }
+    
+    )
+    /*$("#profile-form").submit(function()
+    {
+    	var error_name = false;
+	var error_email=false;
+    	check_email();
+    	check_name();
+
+    	if (error_email==false && error_name==false){
+    	$.ajax({
+            type: "POST",
+            url: "controller/adminProfileController.php",
+            data: $(this).serialize()}).done(function(){
+            alert("Thank you, the form has been accepted! ");
+        });
+        return false;
+ 		}else
+ 		{
+ 			alert("Incrorrect input");
+ 		}	
+    })*/
+
+
 });
 
 
 function check_name()
 {
-	var user_name=$("#name_1").val();
-        
+	var user_name = $("#name_1").val();
         //if(user_name.localeCompare("Name"))
         if (user_name=="")
             {
@@ -60,3 +98,17 @@ function check_email()
             	}    
 
     }
+
+
+function sumt(){
+	if (error_name==false && error_email==false)
+	{
+	    $.ajax({
+	        type: "POST",
+	        url: "controller/adminProfileController.php",
+	        data: $(this).serialize()}).done(function(){
+	        alert("Thank you, the form has been accepted! ");
+	        });
+	        return false;
+	}
+}

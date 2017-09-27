@@ -9,6 +9,12 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
         $data=mysql_fetch_array($query);
 
 ?>
+
+<style>
+  .er-span
+  {color:red;}
+
+</style>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +41,7 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
             <div class="col-lg-5">
                 <h2>Please fill all the fields below</h2>
                <div class="col-lg-12" style="margin-top: 30px;">
-                   <form class="form-horizontal" id="profile-form" action="controller/adminProfileController.php" method="POST">
+                <form class="form-horizontal" name="profile-form" id="profile-form" method="post" action="controller/adminProfileController.php">
     				  
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Name:</label>
@@ -47,20 +53,21 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="login" >Login:</label>
                        <div class="col-sm-6">
-                        <input type="text" class="form-control" id="login_1" value="<?=$data['login'];?>" name="login" readonly>
+                        <input type="text" class="form-control" id="login_1" value="<?=$data['login'];?>" name="login1" readonly>
                             </div>
 
                         </div>
                         <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Email:</label>
                        <div class="col-sm-6">
-                        <input type="text" class="form-control" id="email_1" value="<?=$data['email'];?>" name="email1">
+                        <input type="email" class="form-control" id="email_1" value="<?=$data['email'];?>" name="email1">
                             </div>
                             <div class="col-sm-2"style="padding: 5px;"><span  id="email-val" class="er-span" ></span></div> 
                         </div>  
                     <div class="form-group"> 
                         <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-warning" name="save-adm">Save changes</button>
+                          <!--button type="submit" class="btn btn-warning" id="save-adm" name="save-adm">Save changes</button-->
+                          <input type="submit">
                         </div>
                     </div>
     				</form>
