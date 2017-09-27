@@ -40,23 +40,23 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="name">Name:</label>
                        <div class="col-sm-6">
-                        <input type="text" class="form-control" id="name" value="<?=$data['name']; ?>" name="name1">
+                        <input type="text" class="form-control" id="name_1" value="<?=$data['name']; ?>" name="name1">
                       </div>
-                        <div class="col-sm-2" id="name-span" style="padding: 5px;"><span></span></div>
+                        <div class="col-sm-2" style="padding: 5px;"><span id="name-span" class="er-span"></span></div>
                      </div> 
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="login" >Login:</label>
                        <div class="col-sm-6">
-                        <input type="text" class="form-control" id="login" value="<?=$data['login'];?>" name="login" readonly>
+                        <input type="text" class="form-control" id="login_1" value="<?=$data['login'];?>" name="login" readonly>
                             </div>
 
                         </div>
                         <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Email:</label>
                        <div class="col-sm-6">
-                        <input type="text" class="form-control" id="email" value="<?=$data['email'];?>" name="email1">
+                        <input type="text" class="form-control" id="email_1" value="<?=$data['email'];?>" name="email1">
                             </div>
-                            <div class="col-sm-2" id="email-val" style="padding: 5px;"><span></span></div> 
+                            <div class="col-sm-2"style="padding: 5px;"><span  id="email-val" class="er-span" ></span></div> 
                         </div>  
                     <div class="form-group"> 
                         <div class="col-sm-offset-2 col-sm-10">

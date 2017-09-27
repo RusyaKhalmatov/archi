@@ -8,14 +8,14 @@
     <script src = "js/accessControl.js"></script>
     </head>
     <body>
-        
+
         <?php  if(!isset($_SESSION))
         {
-            session_start();    
+            session_start();
         }
-        
+
         if(isset($_SESSION["name"]))
-            header("Location: admin/admin.php");  
+            header("Location: admin/admin.php");
         ?>
             <div class="container-fluid">
                 <div class="container">
@@ -23,7 +23,7 @@
                     <h1 style="margin-bottom: 5%;">Welcome back, my dear admin!</h1>
                 </div>
                     <div class="row" style="width:40%; margin: auto; ">
-                        
+
                         <form class="form-horizontal" action="admin/adm_log_action.php"  method="post">
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="login">Login:</label>
@@ -33,18 +33,18 @@
                             </div>
                             <div class="form-group">
                               <label class="control-label col-sm-2" for="pwd">Password:</label>
-                              <div class="col-sm-10">          
+                              <div class="col-sm-10">
                                 <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
                               </div>
                             </div>
-                            <!--div class="form-group">        
+                            <!--div class="form-group">
                               <div class="col-sm-offset-2 col-sm-10">
                                 <div class="checkbox">
                                   <label><input type="checkbox" name="remember"> Remember me</label>
                                 </div>
                               </div>
                             </div-->
-                            <div class="form-group">        
+                            <div class="form-group">
                               <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-primary">Enter</button>
                               </div>
@@ -55,8 +55,8 @@
 
 
             </div>
-           <?php 
-       
+           <?php
+
             if (isset($_SESSION["message"]))
             {
             ?>
@@ -68,7 +68,7 @@
             }
                 ?>
         </div>
-        
+
     </body>
-    
+
 </html>
