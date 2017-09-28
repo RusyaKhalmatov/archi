@@ -22,7 +22,11 @@
 				  <label class="control-label" for="email">Email</label>
 				  <input type="text" class="form-control" id="email" aria-describedby="inputSuccess2Status">
 			  	</div>
-			  	<button class="btn btn-success btn-lg" type="submit">Submit</button>
+			  	<div class="form-group"> 
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" class="btn btn-success">Submit</button>
+				    </div>
+				</div>
 			</form>
 		</div>
 	</div>
