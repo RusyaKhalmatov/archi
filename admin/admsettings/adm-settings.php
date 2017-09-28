@@ -13,7 +13,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<form class="form-horizontal">
+			<form class="form-horizontal" id="form" action="">
 			  	<div class="form-group has-feedback nameBlock">
 				  <label class="control-label" for="name">Name</label>
 				  <input type="text" class="form-control" id="name" aria-describedby="inputSuccess2Status">
@@ -31,6 +31,60 @@
 		</div>
 	</div>
 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+	
+	$(document).ready(function(){
+		var validName=false;
+		var validEmail = false;
+
+		$("form").submit(function(event){
+			event.preventDefault(); // предотвратить отправку форму по умолчанию  
+
+			var name = $("#name").val();
+			var email = $("#email").val();
+
+			if(name=="")
+			{
+				$("#name").parent().removeClass("has-success").addClass("has-error");
+				$(".nameBlock").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
+				$('.glyphicon-ok').remove();
+				validName = false;
+			}else{
+				$("#name").parent().removeClass("has-error").addClass("has-success");
+				
+				$(".nameBlock").append('<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>');
+				$('.nameBlock .glyphicon-remove').remove();
+				validName = true;
+			}
+			if(email == "")
+			{
+				
+				$("#email").parent().removeClass("has-success").addClass("has-error");
+				$(".emailBlock").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
+				$('.glyphicon-ok').remove();
+				validEmail= false;
+			}else{
+				$("#email").parent().removeClass("has-error").addClass("has-success");
+				
+				$(".emailBlock").append('<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>');
+				$('.emailBlock .glyphicon-remove').remove();
+				validEmail=true;
+			}
+
+
+			if(validEmail==true && validName==true)
+			{
+				$("form").unbind('submit').submit();//разрешить передачу формы
+
+			}else{
+
+
+			}
+		});
+
+	});
+</script>
 
 </body>
 </html>
