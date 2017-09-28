@@ -24,7 +24,7 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/bootstrap.css" rel="stylesheet">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/profileValidate.js"></script>
+    <!--script src="js/profileValidate.js"></script-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -60,14 +60,14 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
                         <div class="form-group">
                         <label class="control-label col-sm-2" for="email">Email:</label>
                        <div class="col-sm-6">
-                        <input type="email" class="form-control" id="email_1" value="<?=$data['email'];?>" name="email1">
+                        <input type="text" class="form-control" id="email_1" value="<?=$data['email'];?>" name="email1">
                             </div>
                             <div class="col-sm-2"style="padding: 5px;"><span  id="email-val" class="er-span" ></span></div> 
                         </div>  
                     <div class="form-group"> 
                         <div class="col-sm-offset-2 col-sm-10">
-                          <!--button type="submit" class="btn btn-warning" id="save-adm" name="save-adm">Save changes</button-->
-                          <input type="submit">
+                          <button type="submit" class="btn btn-warning" id="save-adm" name="save-adm">Save changes</button>
+                          <!--input type="submit"-->
                         </div>
                     </div>
     				</form>
@@ -150,8 +150,109 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
 
 <script>
 $(document).ready(function(){
-    $("#ch-pwd").click(function(){
+
+
+var error_name = false;
+var error_email = false;
+$("#email-val").hide();
+   $("#ch-pwd").click(function(){
         $("#pwd-panel").slideToggle("slow");
     });
+
+$("#name_1").focusout(function()
+    {
+        check_name();
+    });
+
+$("#email_1").focusout(function()
+    {
+        check_email();
+    });
+
+
+
+  function check_name()
+{
+  var user_name = $("#name_1").val();
+        //if(user_name.localeCompare("Name"))
+        if (user_name=="")
+            {
+                $("#name-span").html("Fill the field");
+                $("#name-span").show();
+                error_name=true;
+            } else
+            {
+                $("#name-span").hide();
+                error_name=false;
+            }
+}
+
+function check_email()
+    {
+
+        var reg = /^(?:(?:(http|https|ftp|[a-z]+)\:\/\/))?((?:(?:[a-zA-Z0-9](?‌​:[a-zA-Z0-9\-](?!\.)‌​){0,61}[a-zA-Z0-9]?)‌​\.?)+)\.([a-zA-Z]{2,‌​6})(\/[a-zA-Z0-9\-\=‌​\:\;\@\&\+\%\,\.\!\~‌​\'\(\)\/]+)*\/?(?:\?‌​([^#]+))?(?:\#(.+))?‌​$/;
+        var user_email = $("#email_1").val();
+        if (reg.test(user_email) == false) 
+        {
+            //alert('Invalid Email Address');
+            $("#email-val").html("Invalid address");
+                $("#email-val").show();
+                error_email=true;
+        }else
+        {
+            $("#email-val").hide();
+                error_email=false;
+        }
+
+        
+
+     // var pattern= new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+     /* var user_email = $("#email_1").val();
+        if (pattern.test(user_email))
+            {
+                $("#email-val").hide();
+                error_email=false;
+            }
+        else
+            {
+                $("#email-val").html("Invalid address");
+                $("#email-val").show();
+                error_email=true;
+            }*/
+        
+        if(user_email=="")
+        {
+          $("#email-val").html("Fill the field");
+                $("#email-val").show();
+                error_email=true;
+        }
+        else
+              {
+                $("#email-val").hide();
+                  error_email=false;  
+              }    
+
+    }
+
+$("#profile-form").submit(
+    function()
+        {        
+          alert("Submit button is pressd");
+            check_name();
+            check_email();
+
+            if (error_name==false && error_email==false)
+                {
+                    return true;
+                }
+            else
+                {
+                    return false;
+                }
+        }
+    
+    );
+
+
 });
 </script>

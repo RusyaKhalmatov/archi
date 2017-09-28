@@ -1,62 +1,19 @@
-$(document).ready(function(){
-	//alert("ready");
-	var error_name = false;
-	var error_email=false;
-	$("#name_1").focusout(function()
+$(function(){
+$("#name_1").focusout(function()
     {
         check_name();
     });
 
-	$("#email_1").focusout(function()
+$("#email_1").focusout(function()
     {
         check_email();
     });
 
-$("#profile-form").submit(
-    function()
-        {        
-            check_name();
-            check_email();
-            
-            if (error_name==false && error_email==false)
-                {
-                    return true;
-                }
-            else
-                {
-                    return false;
-                }
-        }
-    
-    )
-    /*$("#profile-form").submit(function()
-    {
-    	var error_name = false;
-	var error_email=false;
-    	check_email();
-    	check_name();
-
-    	if (error_email==false && error_name==false){
-    	$.ajax({
-            type: "POST",
-            url: "controller/adminProfileController.php",
-            data: $(this).serialize()}).done(function(){
-            alert("Thank you, the form has been accepted! ");
-        });
-        return false;
- 		}else
- 		{
- 			alert("Incrorrect input");
- 		}	
-    })*/
 
 
-});
-
-
-function check_name()
+  function check_name()
 {
-	var user_name = $("#name_1").val();
+  var user_name = $("#name_1").val();
         //if(user_name.localeCompare("Name"))
         if (user_name=="")
             {
@@ -72,9 +29,26 @@ function check_name()
 
 function check_email()
     {
-        var pattern= new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         var user_email = $("#email_1").val();
-        if (pattern.test($("#email_1").val()))
+        if (reg.test(user_email) == false) 
+        {
+            //alert('Invalid Email Address');
+            $("#email-val").html("Invalid address");
+                $("#email-val").show();
+                error_email=true;
+        }else
+        {
+            $("#email-val").hide();
+                error_email=false;
+        }
+
+        
+
+     // var pattern= new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+     /* var user_email = $("#email_1").val();
+        if (pattern.test(user_email))
             {
                 $("#email-val").hide();
                 error_email=false;
@@ -84,31 +58,39 @@ function check_email()
                 $("#email-val").html("Invalid address");
                 $("#email-val").show();
                 error_email=true;
-            }
+            }*/
+        
         if(user_email=="")
         {
-        	$("#email-val").html("Fill the field");
+          $("#email-val").html("Fill the field");
                 $("#email-val").show();
                 error_email=true;
-            }
-            else
-            	{
-            		$("#email-val").hide();
-                	error_email=false;	
-            	}    
+        }
+        else
+              {
+                $("#email-val").hide();
+                  error_email=false;  
+              }    
 
     }
 
+$("#profile-form").submit(
+    function()
+        {        
+          alert("Submit button is pressd");
+            check_name();
+            check_email();
 
-function sumt(){
-	if (error_name==false && error_email==false)
-	{
-	    $.ajax({
-	        type: "POST",
-	        url: "controller/adminProfileController.php",
-	        data: $(this).serialize()}).done(function(){
-	        alert("Thank you, the form has been accepted! ");
-	        });
-	        return false;
-	}
-}
+            if (error_name==false && error_email==false)
+                {
+                    return true;
+                }
+            else
+                {
+                    return false;
+                }
+        }
+    
+    );
+
+});
