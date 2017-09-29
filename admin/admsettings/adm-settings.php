@@ -72,6 +72,24 @@
 				validEmail=true;
 			}
 
+			var pattern= new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+			if (pattern.test($("#email").val()))
+            {
+               $("#email").parent().removeClass("has-error").addClass("has-success");
+				
+				$(".emailBlock").append('<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>');
+				$('.emailBlock .glyphicon-remove').remove();
+				validEmail=true;
+            }
+        else
+            {
+            	alert("Wrong email address");
+                $("#email").parent().removeClass("has-success").addClass("has-error");
+				$(".emailBlock").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
+				$('.glyphicon-ok').remove();
+				validEmail= false;
+            }
+
 
 			if(validEmail==true && validName==true)
 			{
@@ -82,6 +100,11 @@
 
 			}
 		});
+
+		function check_name(){
+
+			
+		}
 
 	});
 </script>
