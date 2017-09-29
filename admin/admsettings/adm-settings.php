@@ -126,9 +126,8 @@
 				$('.emailBlock .glyphicon-remove').remove();
 				$("#email-error").hide();
 				validEmail=true;
-			}
 
-			var pattern= new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+				var pattern= new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
 			if (pattern.test($("#email").val()))
             {
                $("#email").parent().removeClass("has-error").addClass("has-success");
@@ -147,6 +146,9 @@
 				$('.emailBlock .glyphicon-ok').remove();
 				validEmail= false;
             }
+			}
+
+			
 
 		}
 
