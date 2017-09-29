@@ -91,7 +91,7 @@
 			{
 				$("#name").parent().removeClass("has-success").addClass("has-error");
 				$(".for-span-name").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
-				$("#name-error").html("Fill this field");
+				$("#name-error").html("Please fill this field");
 				$("#name-error").show();
 				$('.glyphicon-ok').remove();
 				validName = false;
@@ -115,7 +115,7 @@
 				
 				$("#email").parent().removeClass("has-success").addClass("has-error");
 				$(".for-span-email").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
-				$("#email-error").html("Fill this field");
+				$("#email-error").html("Please this field");
 				$("#email-error").show();
 				$('.glyphicon-ok').remove();
 				validEmail= false;
