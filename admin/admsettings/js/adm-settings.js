@@ -1,16 +1,19 @@
 $(document).ready(function(){
-			$("#ch-pwd").click(function(){
+	$("#ch-pwd").click(function(){
         $("#pwd-panel").slideToggle("slow");
     });
 
 		var validName=false;
 		var validEmail = false;
+		var validOldPwd = false;
 		$("#name-error").hide();
 		$("#email-error").hide();
+		$('#Oldpwd-error').hide();
 		$("#name_1").focusout(function()
     {
         check_name();
     });
+
 
 	$("#email_1").focusout(function()
 	    {
@@ -36,7 +39,6 @@ $(document).ready(function(){
         return false;
         }
     })
-
 
 
 		function check_name(){
@@ -102,9 +104,57 @@ $(document).ready(function(){
 				validEmail= false;
             }
 			}
-
-			
-
 		}
 
+		function check_old_password()
+		{
+			var old_pwd = $("Oldpassword").val();
+
+			if(old_pwd == "" || old_pwd.length<8)
+			{
+				$("#Oldpassword").parent().removeClass("has-success").addClass("has-error");
+				$(".for-span-oldPwd").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
+				$("#Oldpwd-error").html("Enter at least 8 symbols");
+				$("#Oldpwd-error").show();
+				$('.glyphicon-ok').remove();
+				validOldPwd = false;
+			}else
+			{
+				$("#Oldpassword").parent().removeClass("has-error").addClass("has-success");
+				
+				$(".for-span-oldPwd").append('<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>');
+				$('.for-span-oldPwd .glyphicon-remove').remove();
+				$("#Oldpwd-error").hide();
+				validOldPwd = true;
+			}
+		}
+
+
+		function check_old_password()
+    {
+      var old_pwd = $("#Oldpassword").val();
+
+      if(old_pwd == "" || old_pwd.length<8)
+      {
+
+     	 $("#Oldpassword").parent().removeClass("has-success").addClass("has-error");
+        $(".for-span-oldPwd").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
+        $("#Oldpwd-error").html("Enter at least 8 symbols");
+        $("#Oldpwd-error").show();
+        $('.glyphicon-ok').remove();
+        validOldPwd = false;
+      }else
+      {
+        $("#Oldpassword").parent().removeClass("has-error").addClass("has-success");
+        
+        $(".for-span-oldPwd").append('<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>');
+        $('.for-span-oldPwd .glyphicon-remove').remove();
+        $("#Oldpwd-error").hide();
+        validOldPwd = true;
+      }
+    }
+
+function check_new_password(){
+  var 
+}
 	});

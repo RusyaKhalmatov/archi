@@ -92,14 +92,14 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
          </div>
           
           <div class="col-lg-12" id="pwd-panel" style="//border:1px solid black; display: none;">
-            <form  class="form-horizontal" action="controller/adminProfileController.php" method="POST">
-                <div class="form-group">
+            <form id="psswChange" class="form-horizontal" action="controller/adminProfileController.php">
+                <div class="form-group has-feedback OldPwdBlock">
                     <label class="control-label col-sm-2" for="password">Old password:</label>
-                  <div class="col-sm-6">
-                    <input type="password" class="form-control" id="Oldpassword" placeholder="Enter  old password" name="Oldpassword">
+                  <div class="col-sm-6 for-span-oldPwd">
+                    <input type="password" class="form-control" id="Oldpassword" name="Oldpassword" aria-describedby="inputSuccess2Status">
                   </div>
                   <div class="col-sm-4">
-                    <span id="old-pwd"></span>
+                    <span id="Oldpwd-error"></span>
                   </div>  
                 </div>
                 <div class="form-group">
@@ -131,14 +131,7 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
          </div>
         </div>
 
-      <div class="row">
-
-        <div class="col-lg-6 col-lg-offset-2" id="pwd-change" style="padding-left: 50px;">
-         
-        </div>
-
-
-      </div>
+     
 
 
 
@@ -146,3 +139,41 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
     </div>
 </body>
 </html>
+
+<script>
+
+
+$("#Oldpassword").focusout(function()
+    {
+        check_old_password();
+    });
+
+function check_old_password()
+    {
+      var old_pwd = $("#Oldpassword").val();
+
+      if(old_pwd == "" || old_pwd.length<8)
+      {
+        
+
+        $("#Oldpassword").parent().removeClass("has-success").addClass("has-error");
+        $(".for-span-oldPwd").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
+        $("#Oldpwd-error").html("Enter at least 8 symbols");
+        $("#Oldpwd-error").show();
+        $('.glyphicon-ok').remove();
+        validOldPwd = false;
+      }else
+      {
+        $("#Oldpassword").parent().removeClass("has-error").addClass("has-success");
+        
+        $(".for-span-oldPwd").append('<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>');
+        $('.for-span-oldPwd .glyphicon-remove').remove();
+        $("#Oldpwd-error").hide();
+        validOldPwd = true;
+      }
+    }
+
+function check_new_password(){
+  var 
+}
+</script>
