@@ -77,7 +77,7 @@ function check_email()
 $("#profile-form").submit(
     function()
         {        
-          alert("Submit button is pressd");
+          alert("Submit button is pressed");
             check_name();
             check_email();
 

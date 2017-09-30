@@ -40,7 +40,7 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
             <div class="col-lg-5">
                 <h2>Please fill all the fields below</h2>
                <div class="col-lg-12" style="margin-top: 30px;">
-                <form class="form-horizontal" name="profile-form" id="profile-form" method="post" action="controller/adminProfileController.php">
+                <form class="form-horizontal" name="profile-form" id="profile-form">
     			
                       <div class="form-group has-feedback nameBlock">
                         <label class="control-label col-sm-2" for="name">Name:</label>
