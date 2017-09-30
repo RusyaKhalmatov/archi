@@ -1,4 +1,8 @@
 $(document).ready(function(){
+			$("#ch-pwd").click(function(){
+        $("#pwd-panel").slideToggle("slow");
+    });
+
 		var validName=false;
 		var validEmail = false;
 		$("#name-error").hide();
