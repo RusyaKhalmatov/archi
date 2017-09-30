@@ -14,32 +14,6 @@ $(document).ready(function(){
 	    });
 
 
-		/*$("#profile-form").submit(function(event){
-			event.preventDefault(); // предотвратить отправку форму по умолчанию  
-			check_name();
-			check_email();
-			if(validEmail==true && validName==true)
-			{
-				$("#profile-form").unbind('submit').submit();//разрешить передачу формы
-			}
-		});*/
-
-		/*$("#save-adm").click(function(){
-			event.preventDefault(); // предотвратить отправку форму по умолчанию  
-
-			if(validEmail==true && validName==true)
-			{
-				$("#profile-form").unbind('submit');//разрешить передачу формы
-				$.ajax({
-           		type: "POST",
-            	url: "controller/adminProfileController.php",
-            	data: $(this).serialize()}).done(function(){
-            	alert("Thank you, the form has been accepted! ");
-        		});
-			}
-
-		});*/
-
 		$("#profile-form").submit(function()
     {
     	event.preventDefault();
@@ -53,7 +27,7 @@ $(document).ready(function(){
             type: "POST",
             url: "controller/adminProfileController.php",
             data: $(this).serialize()}).done(function(){
-            alert("Thank you, the form has been accepted! ");
+            alert("Changes saved");
         });
         return false;
         }
