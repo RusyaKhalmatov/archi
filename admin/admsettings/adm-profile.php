@@ -7,7 +7,6 @@
     $login = $_SESSION['login'];
 $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
         $data=mysql_fetch_array($query);
-
 ?>
 
 <style>
@@ -24,7 +23,7 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/bootstrap.css" rel="stylesheet">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--script src="js/profileValidate.js"></script-->
+    <script src="js/adm-settings.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -42,13 +41,13 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
                 <h2>Please fill all the fields below</h2>
                <div class="col-lg-12" style="margin-top: 30px;">
                 <form class="form-horizontal" name="profile-form" id="profile-form" method="post" action="controller/adminProfileController.php">
-    				  
-                      <div class="form-group">
+    			
+                      <div class="form-group has-feedback nameBlock">
                         <label class="control-label col-sm-2" for="name">Name:</label>
-                       <div class="col-sm-6">
-                        <input type="text" class="form-control" id="name_1" value="<?=$data['name']; ?>" name="name1">
+                       <div class="col-sm-6 for-span-name">
+                        <input type="text" class="form-control" id="name_1" value="<?=$data['name']; ?>" name="name1" aria-describedby="inputSuccess2Status">
                       </div>
-                        <div class="col-sm-2" style="padding: 5px;"><span id="name-span" class="er-span"></span></div>
+                        <div class="col-sm-2" style="padding: 5px;"><span id="name-error" class="er-span"></span></div>
                      </div> 
                       <div class="form-group">
                         <label class="control-label col-sm-2" for="login" >Login:</label>
@@ -57,17 +56,17 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
                             </div>
 
                         </div>
-                        <div class="form-group">
+                        <div class="form-group has-feedback emailBlock">
                         <label class="control-label col-sm-2" for="email">Email:</label>
-                       <div class="col-sm-6">
-                        <input type="text" class="form-control" id="email_1" value="<?=$data['email'];?>" name="email1">
+                       <div class="col-sm-6 for-span-email">
+                        <input type="text" class="form-control" id="email_1" value="<?=$data['email'];?>" name="email1" aria-describedby="inputSuccess2Status">
                             </div>
-                            <div class="col-sm-2"style="padding: 5px;"><span  id="email-val" class="er-span" ></span></div> 
+                            <div class="col-sm-2"style="padding: 5px;"><span  id="email-error" class="er-span" ></span></div> 
                         </div>  
                     <div class="form-group"> 
                         <div class="col-sm-offset-2 col-sm-10">
                           <button type="submit" class="btn btn-warning" id="save-adm" name="save-adm">Save changes</button>
-                          <!--input type="submit"-->
+                        
                         </div>
                     </div>
     				</form>
@@ -147,112 +146,3 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
     </div>
 </body>
 </html>
-
-<script>
-$(document).ready(function(){
-
-
-var error_name = false;
-var error_email = false;
-$("#email-val").hide();
-   $("#ch-pwd").click(function(){
-        $("#pwd-panel").slideToggle("slow");
-    });
-
-$("#name_1").focusout(function()
-    {
-        check_name();
-    });
-
-$("#email_1").focusout(function()
-    {
-        check_email();
-    });
-
-
-
-  function check_name()
-{
-  var user_name = $("#name_1").val();
-        //if(user_name.localeCompare("Name"))
-        if (user_name=="")
-            {
-                $("#name-span").html("Fill the field");
-                $("#name-span").show();
-                error_name=true;
-            } else
-            {
-                $("#name-span").hide();
-                error_name=false;
-            }
-}
-
-function check_email()
-    {
-
-        var reg = /^(?:(?:(http|https|ftp|[a-z]+)\:\/\/))?((?:(?:[a-zA-Z0-9](?‌​:[a-zA-Z0-9\-](?!\.)‌​){0,61}[a-zA-Z0-9]?)‌​\.?)+)\.([a-zA-Z]{2,‌​6})(\/[a-zA-Z0-9\-\=‌​\:\;\@\&\+\%\,\.\!\~‌​\'\(\)\/]+)*\/?(?:\?‌​([^#]+))?(?:\#(.+))?‌​$/;
-        var user_email = $("#email_1").val();
-        if (reg.test(user_email) == false) 
-        {
-            //alert('Invalid Email Address');
-            $("#email-val").html("Invalid address");
-                $("#email-val").show();
-                error_email=true;
-        }else
-        {
-            $("#email-val").hide();
-                error_email=false;
-        }
-
-        
-
-     // var pattern= new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
-     /* var user_email = $("#email_1").val();
-        if (pattern.test(user_email))
-            {
-                $("#email-val").hide();
-                error_email=false;
-            }
-        else
-            {
-                $("#email-val").html("Invalid address");
-                $("#email-val").show();
-                error_email=true;
-            }*/
-        
-        if(user_email=="")
-        {
-          $("#email-val").html("Fill the field");
-                $("#email-val").show();
-                error_email=true;
-        }
-        else
-              {
-                $("#email-val").hide();
-                  error_email=false;  
-              }    
-
-    }
-
-$("#profile-form").submit(
-    function()
-        {        
-          alert("Submit button is pressd");
-            check_name();
-            check_email();
-
-            if (error_name==false && error_email==false)
-                {
-                    return true;
-                }
-            else
-                {
-                    return false;
-                }
-        }
-    
-    );
-
-
-});
-</script>
