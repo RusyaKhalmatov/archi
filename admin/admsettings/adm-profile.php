@@ -22,9 +22,10 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/bootstrap.css" rel="stylesheet">
+    
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/adm-settings.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/adm-settings.js"></script>
 </head>
 <body>
 
@@ -92,32 +93,39 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
          </div>
           
           <div class="col-lg-12" id="pwd-panel" style="//border:1px solid black; display: none;">
-            <form id="psswChange" class="form-horizontal" action="controller/adminProfileController.php">
+            <form id="psswChange" class="form-horizontal" action="controller/adminPwdController.php">
+
+
                 <div class="form-group has-feedback OldPwdBlock">
-                    <label class="control-label col-sm-2" for="password">Old password:</label>
+                    <label class="control-label col-sm-2" for="Oldpassword">Old password:</label>
                   <div class="col-sm-6 for-span-oldPwd">
-                    <input type="password" class="form-control" id="Oldpassword" name="Oldpassword" aria-describedby="inputSuccess2Status">
+                    <input type="password" class="form-control" id="Oldpassword" name="Oldpassword" placeholder="Enter current password" aria-describedby="inputSuccess2Status">
                   </div>
                   <div class="col-sm-4">
                     <span id="Oldpwd-error"></span>
                   </div>  
                 </div>
-                <div class="form-group">
+
+
+                <div class="form-group has-feedback NewPwdBlock">
                     <label class="control-label col-sm-2" for="password">Password:</label>
-                  <div class="col-sm-6">
+                  <div class="col-sm-6 for-span-newPwd">
                     <input type="password" class="form-control" id="password" placeholder="Enter new password" name="password">
                   </div>  
                   <div class="col-sm-4">
-                    <span id="new-pwd"></span>
+                    <span id="new-pwd-error"></span>
                   </div> 
                 </div>
-                  <div class="form-group">
+
+
+
+                  <div class="form-group has-feedback RepPwdBlock">
                     <label class="control-label col-sm-2" for="password2">Repeat password:</label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6 for-span-repPwd">
                       <input type="password" class="form-control" id="password2" placeholder="Repeat password" name="password2">
                     </div>
                     <div class="col-sm-4">
-                    <span id="per-pwd"></span>
+                    <span id="rep-pwd-error"></span>
                   </div> 
                   </div>  
                     <div class="form-group"> 
@@ -137,43 +145,6 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
 
         </div>
     </div>
+    
 </body>
 </html>
-
-<script>
-
-
-$("#Oldpassword").focusout(function()
-    {
-        check_old_password();
-    });
-
-function check_old_password()
-    {
-      var old_pwd = $("#Oldpassword").val();
-
-      if(old_pwd == "" || old_pwd.length<8)
-      {
-        
-
-        $("#Oldpassword").parent().removeClass("has-success").addClass("has-error");
-        $(".for-span-oldPwd").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
-        $("#Oldpwd-error").html("Enter at least 8 symbols");
-        $("#Oldpwd-error").show();
-        $('.glyphicon-ok').remove();
-        validOldPwd = false;
-      }else
-      {
-        $("#Oldpassword").parent().removeClass("has-error").addClass("has-success");
-        
-        $(".for-span-oldPwd").append('<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>');
-        $('.for-span-oldPwd .glyphicon-remove').remove();
-        $("#Oldpwd-error").hide();
-        validOldPwd = true;
-      }
-    }
-
-function check_new_password(){
-  var 
-}
-</script>
