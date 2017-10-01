@@ -61,15 +61,16 @@ $("#password2").focusout(function()
         }
     });
 
+//&& validRepPwd==true && validMatch==true
 		$("#psswChange").submit(function(event){
 			event.preventDefault(); // предотвратить отправку форму по умолчанию  
-			check_repeat();
-			check_new_pwd();
-			check_old_password();
-			if(validOldPwd==true && validNewPwd==true && validRepPwd==true && validMatch==true)
+		//	check_repeat();
+		//	check_new_pwd();
+			//check_old_password();
+			if(validOldPwd==true && validNewPwd==true)
 			{
+        alert("ffsdf");
 				$("#psswChange").unbind('submit').submit();//разрешить передачу формы
-
 			}
 		});
 
@@ -201,28 +202,26 @@ $("#password2").focusout(function()
         $("#rep-pwd-error").show();
         $('.glyphicon-ok').remove();
         validRepPwd = false;
-
       }
-
-      if(rep_pwd!=new_pwd)
+      else{
+        if(rep_pwd!=new_pwd)
       {
 
-      	$("#password2").parent().removeClass("has-success").addClass("has-error");
+        $("#password2").parent().removeClass("has-success").addClass("has-error");
         $(".for-span-repPwd").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
         $("#rep-pwd-error").empty();
         $("#rep-pwd-error").html("Password doesn't match");
         $("#rep-pwd-error").show();
         $('.glyphicon-ok').remove();
         validRepPwd = false;
-      }	
-      else{
-        $("#password").parent().removeClass("has-error").addClass("has-success");
-        
-        $(".for-span-repPwd").append('<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>');
-        $('.for-span-repPwd .glyphicon-remove').remove();
-        $("#rep-pwd-error").hide();
-        validRepPwd = true;
-
+      } else{
+              $("#password").parent().removeClass("has-error").addClass("has-success");
+              
+              $(".for-span-repPwd").append('<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>');
+              $('.for-span-repPwd .glyphicon-remove').remove();
+              $("#rep-pwd-error").hide();
+              validRepPwd = true;
+            }
 
       }
 
