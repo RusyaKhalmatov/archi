@@ -72,16 +72,7 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
                     </div>
     				</form>
                 </div>
-				<?php 
-				if (isset($_SESSION["message"]))
-            {
-            ?>
-            <div id="message" style="color: red; font-size: 18px;
-        "><?=$_SESSION["message"]?></div>
-            <?php
-                unset($_SESSION["message"]);
-            }
-                ?> 
+				
          </div>
 
          <div class="col-lg-5">
@@ -130,6 +121,16 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
                   </div>  
                     <div class="form-group"> 
                         <div class="col-sm-offset-2 col-sm-10">
+  <?php 
+        if (isset($_SESSION["message"]))
+            {
+            ?>
+            <div id="message" style="color: red; font-size: 18px; margin-bottom: 20px;
+        "><?=$_SESSION["message"]?></div>
+            <?php
+                unset($_SESSION["message"]);
+            }
+                ?> 
                           <button type="submit" class="btn btn-warning" name="save-pwd">Save new password</button>
                         </div>
                     </div>
