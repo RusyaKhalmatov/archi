@@ -202,7 +202,7 @@ $("#password2").focusout(function()
         $('.glyphicon-ok').remove();
         validRepPwd = false;
 
-      }else
+      }
 
       if(rep_pwd!=new_pwd)
       {
