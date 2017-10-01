@@ -1,19 +1,15 @@
 $(document).ready(function(){
-<<<<<<< HEAD
-		
-		$("#ch-pwd").click(function(){
-=======
+
 	$("#ch-pwd").click(function(){
->>>>>>> tet
         $("#pwd-panel").slideToggle("slow");
     });
 
 		var validName=false;
 		var validEmail = false;
-<<<<<<< HEAD
+
 		$("#name-error").hide();
 		$("#email-error").hide();
-=======
+
 		var validOldPwd = false;
 		var validNewPwd = false;
 		var validRepPwd=false;
@@ -31,23 +27,17 @@ $("#Oldpassword").focusout(function()
         check_old_password();
     });
 
->>>>>>> tet
 		$("#name_1").focusout(function()
     {
         check_name();
     });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> tet
 	$("#email_1").focusout(function()
 	    {
 	        check_email();
 	    });
 
-<<<<<<< HEAD
-=======
 $("#password").focusout(function()
 	    {
 	        check_new_pwd();
@@ -56,17 +46,16 @@ $("#password2").focusout(function()
 	    {
 	        check_repeat();
 	    });
->>>>>>> tet
+
 
 		$("#profile-form").submit(function()
     {
     	event.preventDefault();
     	check_name();
-		check_email();
+	   	check_email();
 		if(validEmail==true && validName==true)
 			{
-		$("#profile-form").unbind('submit');//разрешить передачу формы
-
+		    $("#profile-form").unbind('submit');//разрешить передачу формы
         $.ajax({
             type: "POST",
             url: "controller/adminProfileController.php",
@@ -75,11 +64,11 @@ $("#password2").focusout(function()
         });
         return false;
         }
-<<<<<<< HEAD
-    })
 
-=======
     });
+
+
+  //  });
 
 		$("#psswChange").submit(function(event){
 			event.preventDefault(); // предотвратить отправку форму по умолчанию  
@@ -89,10 +78,8 @@ $("#password2").focusout(function()
 			if(validOldPwd==true && validNewPwd==true && validRepPwd==true && validMatch==true)
 			{
 				$("#psswChange").unbind('submit').submit();//разрешить передачу формы
-
 			}
 		});
->>>>>>> tet
 
 
 		function check_name(){
@@ -123,7 +110,6 @@ $("#password2").focusout(function()
 			
 			if(email == "")
 			{
-				
 				$("#email_1").parent().removeClass("has-success").addClass("has-error");
 				$(".for-span-email").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
 				$("#email-error").html("Please this field");
@@ -158,13 +144,9 @@ $("#password2").focusout(function()
 				validEmail= false;
             }
 			}
-<<<<<<< HEAD
-
-			
-
 		}
-=======
-		}
+
+		//}
 
 
 		function check_old_password()
@@ -255,7 +237,5 @@ $("#password2").focusout(function()
 
       
     }
-    
->>>>>>> tet
 
 	});
