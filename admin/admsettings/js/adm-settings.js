@@ -61,13 +61,13 @@ $("#password2").focusout(function()
         }
     });
 
-//&& validRepPwd==true && validMatch==true
-		$("#psswChange").submit(function(event){
+		
+    $("#psswChange").submit(function(event){
 			event.preventDefault(); // предотвратить отправку форму по умолчанию  
 		//	check_repeat();
 		//	check_new_pwd();
 			//check_old_password();
-			if(validOldPwd==true && validNewPwd==true)
+			if(validOldPwd==true && validNewPwd==true && validRepPwd==true && validMatch==true)
 			{
         alert("ffsdf");
 				$("#psswChange").unbind('submit').submit();//разрешить передачу формы
@@ -194,6 +194,7 @@ $("#password2").focusout(function()
     	var new_pwd = $("#password").val();
     	if(rep_pwd == "" || rep_pwd.length<8)
       {
+
      	 $("#password2").parent().removeClass("has-success").addClass("has-error");
         
         $(".for-span-repPwd").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
@@ -206,7 +207,7 @@ $("#password2").focusout(function()
       else{
         if(rep_pwd!=new_pwd)
       {
-
+        alert("not equal");
         $("#password2").parent().removeClass("has-success").addClass("has-error");
         $(".for-span-repPwd").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
         $("#rep-pwd-error").empty();
@@ -214,13 +215,16 @@ $("#password2").focusout(function()
         $("#rep-pwd-error").show();
         $('.glyphicon-ok').remove();
         validRepPwd = false;
-      } else{
+      } else
+      if(rep_pwd==new_pwd){
+
               $("#password").parent().removeClass("has-error").addClass("has-success");
               
               $(".for-span-repPwd").append('<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>');
               $('.for-span-repPwd .glyphicon-remove').remove();
               $("#rep-pwd-error").hide();
               validRepPwd = true;
+              alert("its okay");
             }
 
       }
