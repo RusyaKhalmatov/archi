@@ -1,22 +1,21 @@
 $(document).ready(function(){
-<<<<<<< HEAD
-<<<<<<< HEAD
+  
+  
 
-	$("#ch-pwd").click(function(){
-=======
-	alert("here");
 
-=======
->>>>>>> forwork
+ 
+
+ 
+ 
   $("#ch-pwd").click(function(){
->>>>>>> forwork
+ 
         $("#pwd-panel").slideToggle("slow");
     });
 
 		var validName=false;
 		var validEmail = false;
 
-<<<<<<< HEAD
+  
 		$("#name-error").hide();
 		$("#email-error").hide();
 
@@ -24,8 +23,8 @@ $(document).ready(function(){
 		var validNewPwd = false;
 		var validRepPwd=false;
 		var validMatch=false;
-=======
->>>>>>> forwork
+ 
+ 
 		$("#name-error").hide();
 		$("#email-error").hide();
 
@@ -65,7 +64,7 @@ $(document).ready(function(){
 
     });
 
-<<<<<<< HEAD
+  
 
   //  });
 
@@ -80,10 +79,10 @@ $(document).ready(function(){
 			}
 		});
 
-=======
+ 
 		
     
->>>>>>> forwork
+ 
 
 		function check_name(){
 
@@ -152,7 +151,7 @@ $(document).ready(function(){
 		//}
 
 
-<<<<<<< HEAD
+  
 		function check_old_password()
     {
       var old_pwd = $("#Oldpassword").val();
@@ -241,9 +240,9 @@ $(document).ready(function(){
 
       
     }
-=======
+ 
 		
     
->>>>>>> forwork
+ 
 
 	});

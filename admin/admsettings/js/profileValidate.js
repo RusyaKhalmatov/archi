@@ -43,22 +43,6 @@ function check_email()
             $("#email-val").hide();
                 error_email=false;
         }
-
-        
-
-     // var pattern= new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
-     /* var user_email = $("#email_1").val();
-        if (pattern.test(user_email))
-            {
-                $("#email-val").hide();
-                error_email=false;
-            }
-        else
-            {
-                $("#email-val").html("Invalid address");
-                $("#email-val").show();
-                error_email=true;
-            }*/
         
         if(user_email=="")
         {

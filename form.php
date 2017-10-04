@@ -62,7 +62,7 @@
 	</div>
 </div>
 
-<<<<<<< HEAD
+
 <script type="text/javascript">
 	
 $(document).ready(function(){
@@ -101,11 +101,9 @@ $(document).ready(function(){
             }*/
 	
 </script>
-Rusya
-=======
+
 <script src="js/orderFormScript.js" type="text/javascript"></script>
 
->>>>>>> forwork
 </body>
 </html>
 
