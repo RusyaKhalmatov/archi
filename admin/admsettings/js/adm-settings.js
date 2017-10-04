@@ -1,6 +1,4 @@
 $(document).ready(function(){
-	alert("here");
-
   $("#ch-pwd").click(function(){
         $("#pwd-panel").slideToggle("slow");
     });
