@@ -31,7 +31,7 @@ $("#psswChange").submit(function(event){
 			event.preventDefault(); // предотвратить отправку форму по умолчанию  
 			if(validOldPwd==true && validNewPwd==true /*&& validRepPwd==true && validMatch==true*/)
 			{
-        alert("ffsdf");
+        
 				$("#psswChange").unbind('submit').submit();//разрешить передачу формы
 			}
 		});
@@ -104,7 +104,7 @@ function check_old_password()
 
         if(rep_pwd!=new_pwd)
       {
-        alert("not equal");
+        
         $("#password2").parent().removeClass("has-success").addClass("has-error");
         $(".for-span-repPwd").append('<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>');
         $("#rep-pwd-error").empty();
@@ -121,7 +121,7 @@ function check_old_password()
               $('.for-span-repPwd .glyphicon-remove').remove();
               $("#rep-pwd-error").hide();
               validRepPwd = true;
-              alert("its okay");
+              
             }
 
       }

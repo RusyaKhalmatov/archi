@@ -1,10 +1,13 @@
 $(document).ready(function(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	$("#ch-pwd").click(function(){
 =======
 	alert("here");
 
+=======
+>>>>>>> forwork
   $("#ch-pwd").click(function(){
 >>>>>>> forwork
         $("#pwd-panel").slideToggle("slow");

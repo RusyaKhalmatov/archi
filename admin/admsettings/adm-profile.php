@@ -79,17 +79,26 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
          <div class="col-lg-5">
            <h2>Status</h2>
            <h3>Super admin</h3>
-
+          <?php 
+        if (isset($_SESSION["message"]))
+            {
+            ?>
+            <div id="message" style="color: red; font-size: 18px; margin-bottom: 20px;
+        "><?=$_SESSION["message"]?></div>
+            <?php
+                unset($_SESSION["message"]);
+            }
+                ?> 
            <div class="row" style="padding: 20px;">
            <button class="btn btn-primary" id="ch-pwd">Change password</button>
          </div>
           
           <div class="col-lg-12" id="pwd-panel" style="//border:1px solid black; display: none;">
-            <form id="psswChange" name="psswChange" class="form-horizontal" action="controller/adminPwdController.php">
+            <form id="psswChange" name="psswChange" class="form-horizontal" action="controller/adminPwdController.php" method="post">
 
 
                 <div class="form-group has-feedback OldPwdBlock">
-                    <label class="control-label col-sm-2" for="Oldpassword">Old password:</label>
+                    <label class="control-label col-sm-2" for="Oldpassword">Current password:</label>
                   <div class="col-sm-6 for-span-oldPwd">
                     <input type="password" class="form-control" id="Oldpassword" name="Oldpassword" placeholder="Enter current password" aria-describedby="inputSuccess2Status">
                   </div>
@@ -122,16 +131,7 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
                   </div>  
                     <div class="form-group"> 
                         <div class="col-sm-offset-2 col-sm-10">
-  <?php 
-        if (isset($_SESSION["message"]))
-            {
-            ?>
-            <div id="message" style="color: red; font-size: 18px; margin-bottom: 20px;
-        "><?=$_SESSION["message"]?></div>
-            <?php
-                unset($_SESSION["message"]);
-            }
-                ?> 
+  
                           <button type="submit" class="btn btn-warning" name="save-pwd">Save new password</button>
                         </div>
                     </div>
