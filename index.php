@@ -16,9 +16,9 @@
  <?php include("scripts/navigation.php"); ?>
 
 <div class="container" style="margin-top:25%;">
-	<div class="row" >
-		<a href="form.php">See the form</a>
-	</div>
+	
+
+	
 </div>
  <div class="footer navbar-fixed-bottom" id="bottomPage">
  	<h3>Bottom of the page</h3>
