@@ -1,12 +1,19 @@
 $(document).ready(function(){
+<<<<<<< HEAD
 
 	$("#ch-pwd").click(function(){
+=======
+	alert("here");
+
+  $("#ch-pwd").click(function(){
+>>>>>>> forwork
         $("#pwd-panel").slideToggle("slow");
     });
 
 		var validName=false;
 		var validEmail = false;
 
+<<<<<<< HEAD
 		$("#name-error").hide();
 		$("#email-error").hide();
 
@@ -14,18 +21,13 @@ $(document).ready(function(){
 		var validNewPwd = false;
 		var validRepPwd=false;
 		var validMatch=false;
+=======
+>>>>>>> forwork
 		$("#name-error").hide();
 		$("#email-error").hide();
-		$('#Oldpwd-error').hide();
-		$('#new-pwd-error').hide();
-		$('#rep-pwd-error').hide();
+
 
 		
-$("#Oldpassword").focusout(function()
-    {
-      
-        check_old_password();
-    });
 
 		$("#name_1").focusout(function()
     {
@@ -38,14 +40,7 @@ $("#Oldpassword").focusout(function()
 	        check_email();
 	    });
 
-$("#password").focusout(function()
-	    {
-	        check_new_pwd();
-	    });
-$("#password2").focusout(function()
-	    {
-	        check_repeat();
-	    });
+
 
 
 		$("#profile-form").submit(function()
@@ -67,6 +62,7 @@ $("#password2").focusout(function()
 
     });
 
+<<<<<<< HEAD
 
   //  });
 
@@ -81,6 +77,10 @@ $("#password2").focusout(function()
 			}
 		});
 
+=======
+		
+    
+>>>>>>> forwork
 
 		function check_name(){
 
@@ -149,6 +149,7 @@ $("#password2").focusout(function()
 		//}
 
 
+<<<<<<< HEAD
 		function check_old_password()
     {
       var old_pwd = $("#Oldpassword").val();
@@ -237,5 +238,9 @@ $("#password2").focusout(function()
 
       
     }
+=======
+		
+    
+>>>>>>> forwork
 
 	});
