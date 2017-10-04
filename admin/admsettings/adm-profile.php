@@ -26,6 +26,7 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/adm-settings.js"></script>
+  <script src="js/save_pwd.js"></script>
 </head>
 <body>
 
@@ -84,7 +85,7 @@ $query = mysql_query("SELECT * FROM admins WHERE login='$login'");
          </div>
           
           <div class="col-lg-12" id="pwd-panel" style="//border:1px solid black; display: none;">
-            <form id="psswChange" class="form-horizontal" action="controller/adminPwdController.php">
+            <form id="psswChange" name="psswChange" class="form-horizontal" action="controller/adminPwdController.php">
 
 
                 <div class="form-group has-feedback OldPwdBlock">

@@ -4,8 +4,8 @@ include("../../database_connection.php");
 include("acont.php");
 
 	db_connect();
-
-
+echo "fUCK";
+/*
     	$old_password= trim($_POST['Oldpassword']);
     	$new_password = trim($_POST['password']);
     	$query = mysql_query("SELECT * FROM admins WHERE login='$login'");
@@ -22,7 +22,7 @@ include("acont.php");
         	$set_pwd = encr("$new_password");
         	$sql = mysql_query("UPDATE admins SET password = '$set_pwd' WHERE login ='$login'");
         	redirect("../adm-profile.php","Changes are saved");
-        }
+        }*/
 
         
 ?>
